@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/index.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <title>sign-in</title>
+</head>
+<body>
+    <div class="main">
+          <input type="checkbox" id="chk" aria-hidden="true">
+
+          <div class="signup">
+                <form action="/" method="post">
+
+                  <label for="chk" aria-hidden="true">SIGN UP</label>
+                  <input type="email" name="Email" placeholder="user email" id="" required="email is required">
+                  <input type="password" name="Password" placeholder="user password" id="pass" required="password is required">
+                  <img src="/images/download.png" class="pass-icon" id="pass-icon">
+                  <button class="btn">Sign up</button>
+                </form>
+          </div>
+
+          <div class="login">
+
+            <form action="/signin" method="post">
+              <label for="chk" aria-hidden="true">LOG IN</label>
+                  <input type="email" name="Email" placeholder="user email" id="" required="email is required">
+                  <input type="password" name="Password" placeholder="user password" onclick="eyeicon" id="pass" required="password is required">
+                  <img src="/images/download.png" class="pass-icon" id="pass-icon">
+                  <button class="btn">Log in</button>
+                  <p>Don't have account <a href="/">create account</a>.</p>
+            </form>
+          </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script>
+     ScrollReveal({ reset: true,distance:'60px',duration:2600,delay:400 });
+     ScrollReveal().reveal('.main', { delay: 400,origin:'top' });
+      ScrollReveal().reveal('.signup', { delay: 200,origin:'left'});
+    
+</script>
+<script>
+      let eyeicon = document.getElementById("pass-icon");
+      let pass = document.getElementById("pass");
+
+      eyeicon.onclick = function()
+      {
+            if (pass.type =="password") {
+                  pass.type = "text";
+                  eyeicon.src = "/images/visible.png";
+            }
+            else{
+                  pass.type ="password";
+                  eyeicon.src = "/images/download.png";
+            }
+      }
+
+      
+</script>
+
+
+</body>
+</html>
